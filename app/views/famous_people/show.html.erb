@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @famous_person.name %>
+</p>
+
+<p>
+  <strong>Hometown:</strong>
+  <%= @famous_person.hometown %>
+</p>
+
+<%= link_to 'Edit', edit_famous_person_path(@famous_person) %> |
+<%= link_to 'Back', famous_people_path %>

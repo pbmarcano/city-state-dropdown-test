@@ -1,0 +1,17 @@
+// Find the state select box
+var state = document.getElementById("state");
+
+// Clear the options in the select box
+while (state.firstChild) state.removeChild(state.firstChild);
+
+// Add a placeholder
+var placeholder = document.createElement("option");
+placeholder.text = "Choose a state";
+placeholder.value = "";
+placeholder.placeholder = true;
+state.appendChild(placeholder);
+
+// Add the states
+<% @states.each do |s| %>
+  state.options[state.options.length] = new Option('<%= s[1] %>', '<%= s[0] %>')
+<% end %>

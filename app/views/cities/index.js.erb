@@ -1,0 +1,16 @@
+// Find the state select box
+var city = document.getElementById("famous_person_hometown");
+
+// Clear the options in the select box
+while (city.firstChild) city.removeChild(city.firstChild);
+
+// Add a placeholder
+var placeholder = document.createElement("option");
+placeholder.text = "Choose a city";
+placeholder.value = "";
+city.appendChild(placeholder);
+
+// Add the states
+<% @cities.each do |c| %>
+    city.options[city.options.length] = new Option('<%= c %>');
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Famous People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hometown</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @famous_people.each do |famous_person| %>
+      <tr>
+        <td><%= famous_person.name %></td>
+        <td><%= famous_person.hometown %></td>
+        <td><%= link_to 'Show', famous_person %></td>
+        <td><%= link_to 'Edit', edit_famous_person_path(famous_person) %></td>
+        <td><%= link_to 'Destroy', famous_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Famous Person', new_famous_person_path %>

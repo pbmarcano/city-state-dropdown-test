@@ -1,0 +1,2 @@
+class FamousPerson < ApplicationRecord
+end
